@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistencia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <!-- Mismo navbar que dashboard.html -->
+    </nav>
+    <div class="container mt-4">
+        <h2>Asistencia</h2>
+        <div class="mb-3">
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#manualModal" id="btnManual" style="display: none;">Registrar Asistencia Manual</button>
+            <button class="btn btn-secondary ms-2" onclick="actualizarAsistencia()">Actualizar</button>
+        </div>
+        <h3>Presentes / Ausentes</h3>
+        <div id="presentesAusentes" class="row"></div>
+        <h3>Historial de Asistencia</h3>
+        <table class="table table-striped" id="asistenciaTable">
+            <thead>
+                <tr>
+                    <th>Cédula</th>
+                    <th>Nombre</th>
+                    <th>Fecha</th>
+                    <th>Entrada</th>
+                    <th>Salida</th>
+                    <th>Horas</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <nav aria-label="Paginación">
+            <ul class="pagination" id="pagination"></ul>
+        </nav>
+        <h3>Reportes Diarios</h3>
+        <div class="mb-3">
+            <input type="date" id="reporteFecha" class="form-control d-inline-block w-auto">
+            <button class="btn btn-primary ms-2" onclick="generarReporte()">Generar Reporte</button>
+        </div>
+        <div id="historialReportes"></div>
+    </div>
+    <!-- Modal para Registro Manual -->
+    <div class="modal fade" id="manualModal" tabindex="-1" aria-labelledby="manualModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="manualModalLabel">Registrar Asistencia Manual</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="manualForm">
+                        <div class="mb-3">
+                            <label for="manualCedula" class="form-label">Cédula</label>
+                            <input type="text" id="manualCedula" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="manualTipo" class="form-label">Tipo de Marca</label>
+                            <select id="manualTipo" class="form-select" required>
+                                <option value="entrada">Entrada</option>
+                                <option value="salida">Salida</option>
+                                <option value="pausa">Pausa</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="manualJustificacion" class="form-label">Justificación</label>
+                            <textarea id="manualJustificacion" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Registrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

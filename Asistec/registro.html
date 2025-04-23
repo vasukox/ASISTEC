@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-light">
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h2 class="text-center mb-4">Registrar Usuario</h2>
+                        <div id="errorMessage" class="alert alert-danger d-none"></div>
+                        <form id="registerForm">
+                            <div class="mb-3">
+                                <label for="regUsername" class="form-label">Usuario</label>
+                                <input type="text" id="regUsername" class="form-control" required aria-describedby="regUsernameHelp">
+                                <div id="regUsernameHelp" class="form-text">Mínimo 4 caracteres.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="regPassword" class="form-label">Contraseña</label>
+                                <input type="password" id="regPassword" class="form-control" required aria-describedby="regPasswordHelp">
+                                <div id="regPasswordHelp" class="form-text">Mínimo 6 caracteres.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="regRole" class="form-label">Rol</label>
+                                <select id="regRole" class="form-select" required>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Contador">Contador</option>
+                                    <option value="RRHH">RRHH</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="regEmail" class="form-label">Correo Electrónico</label>
+                                <input type="email" id="regEmail" class="form-control" required aria-describedby="regEmailHelp">
+                                <div id="regEmailHelp" class="form-text">Para notificaciones y nómina.</div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 btn-animated">Registrar</button>
+                        </form>
+                        <p class="text-center mt-3">
+                            ¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

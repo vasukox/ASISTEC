@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">BioNómina</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="dashboard.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="asistencia.html">Asistencia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="empleados.html">Empleados</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nomina.html">Nómina</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reportes.html">Reportes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="descargas.html">Descargas</a></li>
+                </ul>
+                <span class="navbar-text ms-auto" id="userInfo"></span>
+                <button class="btn btn-outline-light ms-2 btn-animated" onclick="logout()">Cerrar Sesión</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        <h2>Dashboard</h2>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5>Total Empleados</h5>
+                        <p id="totalEmpleados">20</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5>Asistentes Hoy</h5>
+                        <p id="asistentesHoy">15</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5>Horas Totales</h5>
+                        <p id="horasTotales">120</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5>Estado Servicios</h5>
+                        <p id="estadoServicios">ZKTeco: 🟢 | BD: 🟢 | Siigo: 🟢</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3 class="mt-4">Notificaciones</h3>
+        <div id="notifications" class="list-group"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
